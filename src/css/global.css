@@ -1,0 +1,33 @@
+:root {
+  /*Farver*/
+  --primary-color-01: rgba(184, 204, 255, 1);
+  --primary-color-02: rgba(255, 235, 164, 1);
+  --primary-color-03: rgba(255, 247, 236, 1);
+  --secondary-color-01: rgba(32, 32, 32, 1);
+  --secondary-color-02: rgba(143, 143, 143, 1);
+
+  /*Tekst*/
+
+  /*mellemrum*/
+}
+
+.flot {
+  > * + * {
+    margin-top: var(--flow-space, 1em);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Questrial&display=swap");
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 490px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
