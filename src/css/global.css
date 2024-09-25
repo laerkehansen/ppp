@@ -11,9 +11,22 @@
   /*mellemrum*/
 }
 
-.flot {
+.flow {
   > * + * {
     margin-top: var(--flow-space, 1em);
+  }
+
+  h1 {
+    --flow-space: 2.5rem;
+  }
+  h2 {
+    --flow-space: 2rem;
+  }
+  h3 {
+    --flow-space: 1rem;
+  }
+  p {
+    --flow-space: 0.35rem;
   }
 }
 
