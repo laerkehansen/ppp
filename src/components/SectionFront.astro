@@ -8,7 +8,10 @@ import "../css/reset.css";
 
 <section>
   <div class="grid1-1 flow">
-    <Image src={Mig} alt="mig" />
+    <div class="me">
+      <Image src={Mig} alt="mig" />
+      <div id="message-container"></div>
+    </div>
     <div class="text">
       <div class="squirrel">
         <Image src={Squirrel} alt="squirrel" />
@@ -24,42 +27,170 @@ import "../css/reset.css";
 </section>
 
 <style>
-  section {
-    background-color: var(--primary-color-01);
-    width: 100svw;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+  @media (min-width: 481px) {
+    section {
+      background-color: var(--primary-color-01);
+      width: 100svw;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
 
-    .grid1-1 {
+      .grid1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: stretch;
+
+        img {
+          max-width: 480px;
+        }
+
+        .text {
+          grid-column: 2/-1;
+          max-width: 500px;
+          justify-items: center;
+          align-items: center;
+          display: grid;
+          grid-template-rows: repeat(3, auto);
+          justify-self: start;
+
+          .squirrel {
+            grid-row: 2/3;
+            grid-column: 1/1;
+            rotate: 90deg;
+          }
+          .header {
+            grid-row: 2/3;
+            grid-column: 1/1;
+            z-index: 10;
+
+            h1 {
+              align-self: center;
+              justify-self: center;
+              padding: 82px 82x;
+            }
+          }
+        }
+      }
+      #message-container {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      background-color: var(--primary-color-01);
+      width: 100svw;
+      /* padding-top: 10rem;
+      padding-bottom: 10rem; */
+
+      .grid1-1 {
+        display: grid;
+        justify-items: center;
+        align-items: stretch;
+
+        img {
+          max-width: 480px;
+          z-index: 11;
+        }
+
+        .text {
+          /* grid-column: 2/-1; */
+          max-width: 500px;
+          justify-items: center;
+          align-items: center;
+          display: grid;
+          /* grid-template-rows: repeat(3, auto); */
+          justify-self: start;
+
+          .squirrel {
+            grid-row: 2/3;
+            grid-column: 1/1;
+            /* rotate: 90deg; */
+          }
+          .header {
+            grid-row: 2/3;
+            grid-column: 1/1;
+            z-index: 10;
+
+            @layer overrides {
+              h1 {
+                font-size: var(--size-4);
+                padding: 82px 82px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .me {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-items: center;
-      align-items: stretch;
+      grid-template-columns: 20% auto;
 
-      img {
-        max-width: 480px;
+      .visible {
+        opacity: 1;
+      }
+      #message-container {
+        background-color: var(--primary-color-03);
+        color: #333;
+        padding: 4px;
+        border-radius: 5px;
+        margin: 10px 0;
+        width: fit-content;
+        height: fit-content;
+        font-family: Questrial;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        transition: opacity 0.5s ease;
       }
 
-      .text {
-        grid-column: 2/-1;
-        max-width: 500px;
-        justify-items: center;
-        align-items: center;
-        display: grid;
-        grid-template-rows: repeat(3, auto);
+      .grid1-1 .me > img:first-of-type {
+        max-width: 20%;
+        position: sticky;
+        top: 0px;
         justify-self: start;
-
-        .squirrel {
-          grid-row: 2/3;
-          grid-column: 1/1;
-          rotate: 90deg;
-        }
-        .header {
-          grid-row: 2/3;
-          grid-column: 1/1;
-          z-index: 10;
-        }
+        margin: 1rem;
       }
     }
   }
 </style>
+
+<script>
+  // Beskedindhold
+  const messages = [
+    "Heej, fun facts om mig:)",
+    "Jeg elsker at lære nyt!",
+    "Jeg elsker al mad, men mest pizza",
+    "Jeg elsker farverne gul og blå:)",
+  ];
+
+  let messageIndex = 0;
+
+  // Funktion til at vise en besked
+  function showMessage() {
+    const container = document.getElementById("message-container");
+
+    // Opret et nyt beskedelement
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message");
+    messageDiv.textContent = messages[messageIndex];
+    container.appendChild(messageDiv);
+
+    // Gør beskeden synlig efter den er tilføjet
+    setTimeout(() => {
+      messageDiv.classList.add("visible");
+    }, 100); // Lille forsinkelse for at lade transition-effekten fungere
+
+    // Fjern beskeden efter 8 sekunder
+    setTimeout(() => {
+      messageDiv.classList.remove("visible");
+      setTimeout(() => container.removeChild(messageDiv), 500); // Giv tid til at forsvinde visuelt
+    }, 8000); // Beskeden forsvinder efter 8 sekunder
+
+    // Opdater beskedindekset for den næste besked
+    messageIndex = (messageIndex + 1) % messages.length;
+  }
+
+  // Start med at vise beskeder hver 10. sekund
+  setInterval(showMessage, 10000);
+</script>

@@ -75,6 +75,7 @@ li,
 figcaption {
   max-width: 65ch;
   text-wrap: pretty;
+  font-family: Questrial;
 }
 
 a[class]:any-link {
