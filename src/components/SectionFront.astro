@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import Mig from "../images/mig.svg";
+import Squirrel from "../images/squirrel.svg";
+import "../css/global.css";
+import "../css/reset.css";
+---
+
+<section>
+  <div class="grid1-1 flow">
+    <Image src={Mig} alt="mig" />
+    <div class="text">
+      <div class="squirrel">
+        <Image src={Squirrel} alt="squirrel" />
+      </div>
+      <div class="header">
+        <h1>
+          Hej, jeg hedder Lærke Hansen og læser til multimediedesigner, jeg er
+          interesseret i webdesign og ....
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--primary-color-01);
+    width: 100svw;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    .grid1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      align-items: stretch;
+
+      img {
+        max-width: 480px;
+      }
+
+      .text {
+        grid-column: 2/-1;
+        max-width: 500px;
+        justify-items: center;
+        align-items: center;
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        justify-self: start;
+
+        .squirrel {
+          grid-row: 2/3;
+          grid-column: 1/1;
+          rotate: 90deg;
+        }
+        .header {
+          grid-row: 2/3;
+          grid-column: 1/1;
+          z-index: 10;
+        }
+      }
+    }
+  }
+</style>

@@ -7,13 +7,21 @@
   --secondary-color-02: rgba(143, 143, 143, 1);
 
   /*Tekst*/
+  --size--2: clamp(0.8681rem, 0.5728rem + 0.9641vw, 1.32rem);
+  --size--1: clamp(1.0417rem, 0.6442rem + 1.2978vw, 1.65rem);
+  --size-0: clamp(1.25rem, 0.7192rem + 1.7333vw, 2.0625rem);
+  --size-1: clamp(1.5rem, 0.7956rem + 2.3vw, 2.5781rem);
+  --size-2: clamp(1.8rem, 0.8705rem + 3.035vw, 3.2227rem);
+  --size-3: clamp(2.16rem, 0.9394rem + 3.9858vw, 4.0283rem);
+  --size-4: clamp(2.592rem, 0.9956rem + 5.2126vw, 5.0354rem);
+  --size-5: clamp(3.1104rem, 1.0303rem + 6.7922vw, 6.2943rem);
 
   /*mellemrum*/
 }
 
 .flow {
   > * + * {
-    margin-top: var(--flow-space, 1em);
+    margin-bottom: var(--flow-space, 1em);
   }
 
   h1 {
@@ -30,14 +38,20 @@
   }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Questrial&display=swap");
-
 main {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
 }
 
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: var(--size-3);
+}
 @media (max-width: 490px) {
   main {
     display: grid;
