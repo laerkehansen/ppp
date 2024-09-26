@@ -1,56 +1,53 @@
 @layer reset, global, components, overrides;
-:root {
-  /*Farver*/
-  --primary-color-01: rgba(184, 204, 255, 1);
-  --primary-color-02: rgba(255, 235, 164, 1);
-  --primary-color-03: rgba(255, 247, 236, 1);
-  --secondary-color-01: rgba(32, 32, 32, 1);
-  --secondary-color-02: rgba(143, 143, 143, 1);
+@layer global {
+  :root {
+    /*Farver*/
+    --primary-color-01: rgba(184, 204, 255, 1);
+    --primary-color-02: rgba(255, 235, 164, 1);
+    --primary-color-03: rgba(255, 247, 236, 1);
+    --secondary-color-01: rgba(32, 32, 32, 1);
+    --secondary-color-02: rgba(143, 143, 143, 1);
 
-  /*Tekst*/
-  --size--2: clamp(0.8681rem, 0.5728rem + 0.9641vw, 1.32rem);
-  --size--1: clamp(1.0417rem, 0.6442rem + 1.2978vw, 1.65rem);
-  --size-0: clamp(1.25rem, 0.7192rem + 1.7333vw, 2.0625rem);
-  --size-1: clamp(1.5rem, 0.7956rem + 2.3vw, 2.5781rem);
-  --size-2: clamp(1.8rem, 0.8705rem + 3.035vw, 3.2227rem);
-  --size-3: clamp(2.16rem, 0.9394rem + 3.9858vw, 4.0283rem);
-  --size-4: clamp(2.592rem, 0.9956rem + 5.2126vw, 5.0354rem);
-  --size-5: clamp(3.1104rem, 1.0303rem + 6.7922vw, 6.2943rem);
+    /*Tekst*/
+    --size--2: clamp(0.8681rem, 0.5728rem + 0.9641vw, 1.32rem);
+    --size--1: clamp(1.0417rem, 0.6442rem + 1.2978vw, 1.65rem);
+    --size-0: clamp(1.25rem, 0.7192rem + 1.7333vw, 2.0625rem);
+    --size-1: clamp(1.5rem, 0.7956rem + 2.3vw, 2.5781rem);
+    --size-2: clamp(1.8rem, 0.8705rem + 3.035vw, 3.2227rem);
+    --size-3: clamp(2.16rem, 0.9394rem + 3.9858vw, 4.0283rem);
+    --size-4: clamp(2.592rem, 0.9956rem + 5.2126vw, 5.0354rem);
+    --size-5: clamp(3.1104rem, 1.0303rem + 6.7922vw, 6.2943rem);
 
-  /*mellemrum*/
-}
-
-.flow {
-  > * + * {
-    margin-bottom: var(--flow-space, 1em);
+    /*mellemrum*/
   }
 
-  h1 {
-    --flow-space: 2.5rem;
-  }
-  h2 {
-    --flow-space: 2rem;
-  }
-  h3 {
-    --flow-space: 1rem;
-  }
-  p {
-    --flow-space: 0.35rem;
-  }
-}
+  .flow {
+    > * + * {
+      margin-bottom: var(--flow-space, 1em);
+    }
 
-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
+    h1 {
+      --flow-space: 2.5rem;
+    }
+    h2 {
+      --flow-space: 2rem;
+    }
+    h3 {
+      --flow-space: 1rem;
+    }
+    p {
+      --flow-space: 0.35rem;
+    }
+  }
 
-.dm-serif-display-regular {
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-@media (max-width: 490px) {
-  main {
-    display: grid;
+  .dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  @media (max-width: 490px) {
+    main {
+      display: grid;
+    }
   }
 }

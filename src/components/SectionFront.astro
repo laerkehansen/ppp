@@ -62,12 +62,6 @@ import "../css/reset.css";
             grid-row: 2/3;
             grid-column: 1/1;
             z-index: 10;
-
-            h1 {
-              align-self: center;
-              justify-self: center;
-              padding: 82px 82x;
-            }
           }
         }
       }
@@ -81,8 +75,8 @@ import "../css/reset.css";
     section {
       background-color: var(--primary-color-01);
       width: 100svw;
-      /* padding-top: 10rem;
-      padding-bottom: 10rem; */
+      padding-top: 3rem;
+      padding-bottom: 3rem;
 
       .grid1-1 {
         display: grid;
@@ -95,25 +89,22 @@ import "../css/reset.css";
         }
 
         .text {
-          /* grid-column: 2/-1; */
           max-width: 500px;
           justify-items: center;
           align-items: center;
           display: grid;
-          /* grid-template-rows: repeat(3, auto); */
           justify-self: start;
 
           .squirrel {
             grid-row: 2/3;
             grid-column: 1/1;
-            /* rotate: 90deg; */
           }
           .header {
             grid-row: 2/3;
             grid-column: 1/1;
             z-index: 10;
 
-            @layer overrides {
+            @layer component {
               h1 {
                 font-size: var(--size-4);
                 padding: 82px 82px;

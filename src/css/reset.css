@@ -25,13 +25,13 @@ body {
   padding: 0;
 }
 
-header,
+/* header,
 footer,
 main,
 section,
 article {
   container-type: inline-size;
-}
+} */
 
 ol[role="list"],
 ul[role="list"] {
@@ -68,6 +68,14 @@ h6 {
   text-wrap: balance;
   margin: 0;
   font-family: "DM+Serif";
+}
+
+h1 {
+  font-size: var(--size-3);
+}
+
+h2 {
+  font-size: var(--size-1);
 }
 
 p,
