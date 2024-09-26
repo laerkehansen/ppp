@@ -1,0 +1,37 @@
+---
+import "../css/global.css";
+import "../css/reset.css";
+const { text, headertext } = Astro.props;
+---
+
+<div class="tool">
+  <h3>{headertext}</h3>
+  <p class="fold">
+    {text}
+  </p>
+</div>
+
+<style>
+  .tool {
+    background-color: var(--primary-color-01);
+    color: var(--secondary-color-01);
+    border-radius: 2rem;
+    padding: 0.5em 1em;
+    border: solid 1px var(--secondary-color-01);
+
+    p {
+      display: none;
+    }
+  }
+
+  .tool:hover {
+    background-color: var(--primary-color-02);
+    color: var(--secondary-color-01);
+    border-radius: 2rem;
+    border: solid 1px var(--secondary-color-01);
+
+    p {
+      display: block;
+    }
+  }
+</style>

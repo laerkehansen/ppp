@@ -1,0 +1,73 @@
+---
+import "../css/global.css";
+import "../css/reset.css";
+import Bubblefill from "../components/Bubblefill.astro";
+---
+
+<section>
+  <div class="box">
+    <div class="flexbox">
+      <Bubblefill
+        headertext="Javascript"
+        text=`Jeg har en grundlæggende forståelse af JavaScript, herunder basale funktioner og
+          syntaks, men har brug for mere øvelse og viden om avancerede koncepter som asynkrone
+          operationer, objekter og DOM-manipulation.`
+      />
+      <Bubblefill
+        headertext="CSS"
+        text=`Jeg er fortrolig med CSS og kan tilpasse layouts og styling, herunder brug af Flexbox og Grid, for at skabe attraktive og funktionelle webdesigns.`
+      /><Bubblefill
+        headertext="HTML"
+        text=`Jeg har et godt greb om HTML og kan strukturere semantisk korrekte og tilgængelige websider.`
+      /><Bubblefill
+        headertext="Tailwind"
+        text=`Jeg har god erfaring med at bruge Tailwind til hurtigt at opbygge responsive og moderne brugergrænseflader.`
+      /><Bubblefill
+        headertext="Illustrator"
+        text=`Jeg har en solid forståelse af Adobe Illustrator og bruger det til at skabe vektorgrafik og ikoner til webprojekter.`
+      /><Bubblefill
+        headertext="Github"
+        text=`Jeg bruger Github til versionsstyring og samarbejde på projekter, og jeg har erfaring med pull requests, branches og merge processer.`
+      /><Bubblefill
+        headertext="React"
+        text=`Jeg er bekendt med React og kan bygge dynamiske brugergrænseflader samt forstå brugen af komponentbaseret arkitektur.`
+      /><Bubblefill
+        headertext="Astro.js"
+        text=`Jeg har praktisk erfaring med Astro.js og kan bruge det til at bygge hurtige, statiske websites med moderne værktøjer.`
+      /><Bubblefill
+        headertext="Figma"
+        text=`JJeg har en grundlæggende forståelse af Figma og kan oprette simple designs og prototyper, samt samarbejde med udviklere om designprocesser.`
+      />
+      <Bubblefill
+        headertext="Netlify"
+        text=`Jeg har erfaring med at deploye webprojekter på Netlify og kan hurtigt få statiske sites online.`
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 481px) {
+    section {
+      background-color: var(--primary-color-02);
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: 100px 100px;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+
+      .flexbox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .box {
+        max-width: 530px;
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+  }
+</style>
