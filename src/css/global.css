@@ -1,4 +1,7 @@
 @layer reset, global, components, overrides;
+html {
+  cursor: url("/images/mycursor.svg"), auto;
+}
 @layer global {
   :root {
     /*Farver*/
@@ -45,9 +48,7 @@
     font-weight: 400;
     font-style: normal;
   }
-  body {
-    cursor: url("src/images/IMG_5230-removebg-preview.png"), auto;
-  }
+
   @media (max-width: 490px) {
     main {
       display: grid;
