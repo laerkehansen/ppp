@@ -82,7 +82,7 @@ h3 {
 }
 
 p,
-li,
+/* li, */
 figcaption {
   max-width: 65ch;
   text-wrap: pretty;
