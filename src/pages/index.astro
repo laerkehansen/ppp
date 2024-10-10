@@ -10,10 +10,37 @@ import ProjectDisplay from "../components/ProjectDisplay.astro";
 ---
 
 <MainLayout>
-  <SectionFront />
-  <SectionBlack />
+  <section id="section1">
+    <SectionFront />
+  </section>
+  <section id="section2">
+    <SectionBlack />
+  </section>
   <Bubbles />
   <Experience />
   <ProjectDisplay />
 </MainLayout>
 <style></style>
+<script>
+  document.getElementById("arrow").addEventListener("click", function () {
+    // Find næste sektion
+    const section = document.getElementById("section2");
+
+    // Scroll til sektionen med smooth behavior
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    // Når scrolling er færdig, juster scroll-position for at centrere
+    setTimeout(() => {
+      const sectionHeight = section.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Beregn hvor meget der skal scrolle for at placere sektionen i midten
+      const scrollOffset = (windowHeight - sectionHeight) / 2;
+
+      window.scrollBy(0, scrollOffset);
+    }, 500); // Brug lidt tid til at sikre, at scrollIntoView er færdig
+  });
+</script>

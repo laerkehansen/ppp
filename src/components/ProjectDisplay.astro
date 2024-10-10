@@ -15,9 +15,15 @@ import GL2 from "../images/GL2.jpg";
     <li>
       <div class="grid">
         <div class="header">
-          <h2>Arbejde</h2>
+          <h2>Projekter</h2>
           <Image src={Squiggle} alt="mig" />
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+          ><path
+            style="fill:#232326"
+            d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
+            data-name="Right"></path></svg
+        >
         <div class="grid3-2">
           <Image class="img1" src={CLF} alt="forside" />
           <Image class="img2" src={CLF2} alt="redesign" />
@@ -48,11 +54,17 @@ import GL2 from "../images/GL2.jpg";
     </li>
     <li>
       <div class="grid figma">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+          ><path
+            style="fill:#232326"
+            d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
+            data-name="Right"></path></svg
+        >
         <div class="grid3-2">
           <Image class="img1" src={FD1} alt="forside" />
           <Image class="img2" src={FD2} alt="redesign" />
           <div class="text">
-            <h2>Redesign af Figma Design</h2>
+            <h2>implementering af Figma Design</h2>
             <p>
               I denne opgave skulle vi selv implementer et figma design vi havde
               fået udleveret i undervisningen. Vi skulle fokuserer på at benytte
@@ -77,6 +89,12 @@ import GL2 from "../images/GL2.jpg";
     </li>
     <li>
       <div class="grid green-living">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+          ><path
+            style="fill:#232326"
+            d="M24 12.001H2.914l5.294-5.295-.707-.707L1 12.501l6.5 6.5.707-.707-5.293-5.293H24v-1z"
+            data-name="Left"></path></svg
+        >
         <div class="grid3-2">
           <Image class="img1" src={GL1} alt="forside" />
           <Image class="img2" src={GL2} alt="redesign" />
@@ -110,11 +128,19 @@ import GL2 from "../images/GL2.jpg";
   </ul>
 </section>
 <style>
+  html {
+    scroll-snap-type: inline mandatory;
+  }
   section {
     background-color: var(--primary-color-01);
     padding-top: 10rem;
     padding-bottom: 10rem;
     color: var(--secondary-color-01);
+
+    overflow-x: auto;
+    > * {
+      flex: 1 0 100%;
+    }
 
     .grid {
       display: grid;
@@ -223,5 +249,22 @@ import GL2 from "../images/GL2.jpg";
   .green-living {
     max-width: 100svw;
     max-height: 100svh;
+  }
+
+  svg {
+    max-width: 10%;
+    grid-column: -1;
+    animation: leftAndRight 4s ease-in-out infinite;
+  }
+  @keyframes leftAndRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-80px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 </style>
