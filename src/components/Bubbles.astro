@@ -13,7 +13,7 @@ import Mig from "../images/Facetune_26-09-2024-15-14-06-removebg-preview.png";
       <h1>Introduktion</h1>
       <Image src={Squiggle} alt="blaa squiggle" />
     </div>
-    <p>Hvem er jeg?</p>
+    <p class="name">Hvem er jeg?</p>
     <p>
       Jeg er en glad 22-årig falstring der nu har boet i Valby i lidt over et
       år, hvor jeg bor med min tvillingesøster. I min fritid elsker jeg at være
@@ -66,7 +66,7 @@ import Mig from "../images/Facetune_26-09-2024-15-14-06-removebg-preview.png";
         text=`Jeg har praktisk erfaring med Astro.js og kan bruge det til at bygge hurtige, statiske websites med moderne værktøjer.`
       /><Bubblefill
         headertext="Figma"
-        text=`JJeg har en grundlæggende forståelse af Figma og kan oprette simple designs og prototyper, samt samarbejde med udviklere om designprocesser.`
+        text=`Jeg har en grundlæggende forståelse af Figma og kan oprette simple designs og prototyper, samt samarbejde med udviklere om designprocesser.`
       />
       <Bubblefill
         headertext="Netlify"
@@ -117,12 +117,21 @@ import Mig from "../images/Facetune_26-09-2024-15-14-06-removebg-preview.png";
       justify-content: flex-start;
       flex-direction: column;
       align-items: flex-start;
+
+      .name {
+        margin: 0rem;
+        font-size: larger;
+      }
     }
 
     .contact {
       align-self: center;
       display: flex;
       flex-direction: column;
+      h3 {
+        font-family: Questrial;
+        font-size: var(--size--1);
+      }
       h2 {
         border-bottom: 1px solid var(--secondary-color-01);
         max-width: fit-content;

@@ -6,24 +6,33 @@ import "../css/reset.css";
 <section>
   <div class="textbox">
     <h2>
-      “Jeg er en <span
-        style="background-color: var(--primary-color-01); color: var(--secondary-color-01);"
-        >nysgerrig og engageret</span
-      > studerende med interesse for <span
-        style="background-color: var(--primary-color-01); color: var(--secondary-color-01);"
-        >webudvikling samt design</span
-      >. Jeg ønsker og <span
-        style="background-color: var(--primary-color-01); color: var(--secondary-color-01);"
-        >udvikle</span
-      > mine evner indenfor bæredygtig webudvikling, og være med til at skabe <span
-        style="background-color: var(--primary-color-01); color: var(--secondary-color-01);"
-        >holdbare løsninger</span
+      “Jeg er en <mark>nysgerrig og engageret</mark> studerende med interesse for
+      <mark>webudvikling samt design</mark>. Jeg ønsker og <mark>udvikle</mark> mine
+      evner indenfor bæredygtig webudvikling, og være med til at skabe <mark
+        >holdbare løsninger</mark
       > for fremtiden”
     </h2>
   </div>
 </section>
 
 <style>
+  mark {
+    background: linear-gradient(
+      to right,
+      var(--primary-color-01) 50%,
+      var(--secondary-color-01) 50%
+    );
+    background-position: 100%;
+    background-size: 200% 100%;
+    animation: --highlight linear forwards;
+    animation-timeline: view(50% 20%);
+  }
+
+  @keyframes --highlight {
+    to {
+      background-position: 0;
+    }
+  }
   @media (min-width: 481px) {
     section {
       background-color: var(--secondary-color-01);

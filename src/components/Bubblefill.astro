@@ -18,20 +18,38 @@ const { text, headertext } = Astro.props;
     border-radius: 2rem;
     padding: 0.5em 1em;
     border: solid 1px var(--secondary-color-01);
+    cursor: pointer;
 
-    p {
+    /* Indledningsvis skjul <p> */
+    .fold {
       display: none;
     }
-  }
 
-  .tool:hover {
-    background-color: var(--primary-color-02);
-    color: var(--secondary-color-01);
-    border-radius: 2rem;
-    border: solid 1px var(--secondary-color-01);
-
-    p {
-      display: block;
+    h3 {
+      font-family: Questrial;
+      font-size: var(--size--2);
+      font-weight: bold;
+      margin: 0;
     }
   }
+
+  /* Gør <p> synlig, når fold-klassen fjernes */
+  .fold {
+    display: block;
+    margin: 0;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tools = document.querySelectorAll(".tool");
+
+    tools.forEach((tool) => {
+      const paragraf = tool.querySelector(".fold");
+
+      tool.addEventListener("click", function () {
+        paragraf.classList.toggle("fold");
+      });
+    });
+  });
+</script>

@@ -1,6 +1,7 @@
 ---
 import "../css/global.css";
 import { Image } from "astro:assets";
+
 import Squiggle from "../images/squirrel2.svg";
 import CLF from "../images/CLF.jpg";
 import CLF2 from "../images/CLF2.jpg";
@@ -11,13 +12,13 @@ import GL2 from "../images/GL2.jpg";
 ---
 
 <section class="flow">
+  <div class="header">
+    <h2>Projekter</h2>
+    <Image src={Squiggle} alt="mig" />
+  </div>
   <ul>
     <li>
       <div class="grid">
-        <div class="header">
-          <h2>Projekter</h2>
-          <Image src={Squiggle} alt="mig" />
-        </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
           ><path
             style="fill:#232326"
@@ -149,21 +150,20 @@ import GL2 from "../images/GL2.jpg";
     }
 
     .header {
-      grid-column: 1 / 1;
-      grid-row: 1 / 1;
       display: flex;
       gap: 1rem;
-      margin-bottom: 3rem;
-      align-content: flex-start;
+      padding-left: 6rem;
+      /* margin-bottom: 1rem; */
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: flex-start;
+      align-items: center;
 
       h2 {
         font-size: var(--size-2);
       }
 
       img {
-        max-width: 20%;
+        max-width: 10%;
       }
     }
 
@@ -174,6 +174,11 @@ import GL2 from "../images/GL2.jpg";
       gap: 3rem;
       grid-column: 1/-1;
       position: relative;
+
+      h2 {
+        font-family: Questrial;
+        font-size: var(--size-0);
+      }
 
       .img1 {
         grid-column: 2/2;
@@ -268,3 +273,8 @@ import GL2 from "../images/GL2.jpg";
     }
   }
 </style>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+</script>
