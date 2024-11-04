@@ -11,7 +11,7 @@ import Squiggle from "../images/blaa_squirrel.svg";
       <h2>Arbejde</h2>
       <Image src={Squiggle} alt="mig" />
     </div>
-    <div class="when when-phone">
+    <div class="when when-phone quickfix">
       <p>Søstrene Grene (1 år 3 måneder)</p>
       <p>
         <span style="color: var(--secondary-color-02);"
@@ -196,7 +196,7 @@ import Squiggle from "../images/blaa_squirrel.svg";
 </section>
 
 <style>
-  @media (min-width: 481px) {
+  @media (min-width: 1200px) {
     @layer component {
       li {
         max-width: 65ch;
@@ -213,6 +213,7 @@ import Squiggle from "../images/blaa_squirrel.svg";
         display: flex;
         gap: 1rem;
         margin-bottom: 3rem;
+        transform: none !important;
 
         img {
           max-width: 20%;
@@ -232,9 +233,8 @@ import Squiggle from "../images/blaa_squirrel.svg";
           align-self: flex-start;
           justify-self: self-end;
           padding-right: 1.5rem;
-          line-height: 10%;
+          line-height: 1rem;
           grid-column: 2/3;
-
           .when:last-child {
             margin: 0;
           }
@@ -275,8 +275,9 @@ import Squiggle from "../images/blaa_squirrel.svg";
     .when-mobile {
       display: none;
     }
+    
   }
-  @media (max-width: 480px) {
+  @media (max-width: 1199px) {
     section {
       background-color: var(--secondary-color-01);
       color: var(--primary-color-03);
@@ -289,6 +290,7 @@ import Squiggle from "../images/blaa_squirrel.svg";
         margin-top: 2.5rem;
         display: flex;
         gap: 0.5rem;
+        transform: none !important;
 
         img {
           max-width: 20%;
@@ -301,11 +303,13 @@ import Squiggle from "../images/blaa_squirrel.svg";
 
         .when-phone {
           display: none;
+
+         
         }
       }
 
       .when-mobile {
-        line-height: 3px;
+        line-height: 10px;
       }
     }
     .flex ul {
