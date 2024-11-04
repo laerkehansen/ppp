@@ -12,32 +12,28 @@ const { text, headertext } = Astro.props;
 </div>
 
 <style>
-  .tool {
-    background-color: var(--primary-color-01);
-    color: var(--secondary-color-01);
-    border-radius: 2rem;
-    padding: 0.5em 1em;
-    border: solid 1px var(--secondary-color-01);
-    cursor: pointer;
+ .tool {
+  background-color: var(--primary-color-01);
+  color: var(--secondary-color-01);
+  border-radius: 2rem;
+  padding: 0.5em 1em;
+  border: solid 1px var(--secondary-color-01);
+  cursor: pointer;
+}
 
-    /* Indledningsvis skjul <p> */
-    .fold {
-      display: none;
-    }
+.tool h3 {
+  font-family: Questrial;
+  font-size: var(--size--2);
+  font-weight: bold;
+  margin: 0;
+}
 
-    h3 {
-      font-family: Questrial;
-      font-size: var(--size--2);
-      font-weight: bold;
-      margin: 0;
-    }
-  }
+/* Indledningsvis skjul <p> */
+.fold {
+  display: none;
+  margin: 0;
+}
 
-  /* Gør <p> synlig, når fold-klassen fjernes */
-  .fold {
-    display: block;
-    margin: 0;
-  }
 </style>
 
 <script>
