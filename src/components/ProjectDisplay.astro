@@ -12,18 +12,97 @@ import GreenLiving from "../images/green-living.jpg";
 <section class="flow">
   <div class="header">
     <h2>Projekter</h2>
-    <Image src={Squiggle} alt="mig" />
+    <!-- <Image src={Squiggle} alt="mig" /> -->
   </div>
   <section class="grid2-2">
-    <Image src={Copenhagen} alt="projekt om CLF" class="copenhagen"/>
-    <Image src={Figma} alt="projekt om figma-redesign" class="figma"/>
-    <Image src={Todo} alt="projekt om todo-app" class="todo"/>
-    <Image src={GreenLiving} alt="projekt om green living" class="green"/>
+    <div class="container copenhagen">
+      <Image src={Copenhagen} alt="projekt om CLF"/>
+      <div class="overlay">
+        <h3>Copenhagen Light Festival</h3>
+        <p> Vi fik til opgave at redesigne CLFs nuværende website ud fra få
+          retningslinjer. Min rolle i denne opgave var meget design fokuseret, da det var dette der var hovedfokus i opgaven. Jeg hjalp dog også med selve implementeringen.</p>
+      </div>
+    </div>
+    <div class="figma container">
+      <Image src={Figma} alt="projekt om figma-redesign"/>
+      <div class="overlay">
+        <h3>Implentering af figma design</h3>
+        <p> I denne opgave skulle vi selv implementer et figma design vi havde
+          fået udleveret i undervisningen. Vi skulle fokuserer på at benytte
+          teknikker fra undervisningen, så vi lærte og benytte dem selv. Jeg
+          fandt det meget lærerigt, og selvom jeg ikke fik styr på alle
+          teknikker.</p>
+      </div>
+    </div>
+    <div class="todo container">
+      <Image src={Todo} alt="projekt om todo-app"/>
+      <div class="overlay">
+        <h3>Todo-app</h3>
+        <p> I denne opgave skulle vi stifte bekendtskab med javascript, og benytte metoder fra undervisningen til at udvikle vores egen todo-app. Jeg synes opgaven var svær, men kom i mål med et produkt jeg var tilfreds med.</p>
+      </div>
+    </div>
+    <div class="green container">
+      <Image src={GreenLiving} alt="projekt om green living"/>
+      <div class="overlay">
+        <h3>Redesign af GreenLiving</h3>
+        <p>  Til vores seneste eksamensopgave skulle vi finde en selvvalgt
+          virksomhed, og hjælpe dem med redesign og implementering af en ny
+          webløsning. Min gruppe og jeg samarbejdede med virksomheden Green
+          Living, og fokuserede på, at give deres website et mere
+          nutidigt/ungdommeligt design. Jeg var med til både
+          implementeringen af webløsningen, og samtidig hjalp jeg også med
+          design idéer og produktion af indhold. Jeg fandt dog mest glæde
+          ved at være med til kodearbejdet.</p>
+      </div>
+    </div>
   </section>
   
 </section>
 <style>
-@media (min-width: 1200px){
+  .container{
+    position: relative;
+    width: 100%;
+
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.75);
+      overflow: hidden;
+      margin-top: 2rem;
+      width: 100%;
+      height: 0;
+      transition: .5s ease;
+    }
+  }
+
+  .container:hover .overlay{
+    height: 100%;
+  }
+  h3{
+  margin-top: 20px;
+  padding-left: 10px;
+  color: white;
+  font-size: var(--size-0);
+  position: absolute;
+  text-wrap: pretty;
+  line-height: 1;
+  }
+
+  p{
+    color: white;
+    font-size: var(--size--2);
+    margin: 4.5rem 0 0 0px;
+    padding-left: 10px;
+  }
+@media (min-width: 451px){
   section{
     background-color: var(--primary-color-01);
     padding-top: 5rem;
@@ -64,6 +143,7 @@ import GreenLiving from "../images/green-living.jpg";
       align-items: center;
       height: fit-content;
       gap: 1rem;
+      padding-left: 4rem;
       img{
         max-width: 30%;
       }

@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import Mig from "../images/mig-forside.svg";
-import Squirrel from "../images/squirrel.svg";
 import "../css/global.css";
 import "../css/reset.css";
 ---
 
 <section>
   <div>
+    <h1 class="text-mobil">Lærke Hansen</h1>
     <div class="me">
       <Image src={Mig} alt="mig" />
     </div>
@@ -19,23 +19,109 @@ import "../css/reset.css";
       </h3>
     </div>
   </div>
-  <!-- <div class="text"> -->
-  <!-- <div class="squirrel">
-      <Image src={Squirrel} alt="squirrel" />
-    </div> -->
-  <!-- </div> -->
-  <!-- <div id="arrow">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
-      ><path
-        style="fill:#232326"
-        d="m18.294 16.793-5.293 5.293V1h-1v21.086l-5.295-5.294-.707.707L12.501 24l6.5-6.5-.707-.707z"
-      ></path></svg
-    >
-  </div> -->
+
 </section>
 
 <style>
-  @media (min-width: 951px) {
+    @media (max-width: 465px) {
+      @layer overrides {
+      section {
+        background-color: var(--primary-color-01);
+        width: 100svw;
+        height: fit-content;
+        padding-top: 5rem;
+        /* padding-bottom: 5rem; */
+
+        section:first-child {
+          display: grid;
+          grid-template-columns: 0.5fr 1fr 0.5fr;
+        }
+      }
+          .text-mobil{
+            text-align: center;
+            font-size: var(--size-5) !important;
+            display: block;
+            
+          }
+          h1{
+            font-size: var(--size-5);
+            text-align: center;
+            padding-bottom: 2rem;
+          }
+
+          h3 {
+            font-size: var(--size-2);
+            max-width: 65ch;
+          }
+        
+          .header{
+            display: none;
+          }
+     
+        .me {
+          display: block;
+          position: relative;
+          max-width: 80%;
+
+          img {
+            display: block;
+            position: relative;
+            max-width: 100%;
+          }
+        }
+        .me::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      border-radius: 300px;
+      background-color: var(--primary-color-02);
+      left: -5rem;
+      top: -3.5rem;
+      z-index: -1;
+    }
+
+    }
+  }
+  @media (max-width: 1150px){
+    section{
+        padding-top: 3rem;
+        /* padding-bottom: 3rem; */
+        background-color: var(--primary-color-01);
+    }
+    .header{
+      display: none;
+    } 
+
+    .text-mobil{
+      display: block;
+    }
+    
+  }
+  
+
+  @media (min-width: 466px){
+    section{
+        padding-top: 3rem;
+    }
+    .me{
+  display: block;
+  max-width: 100%;
+}
+
+.text-mobil{
+  text-align: center;
+  font-size: var(--size-5) !important;
+  display: block;
+}
+/* .header{
+display: block;} */
+  }
+  @media (min-width: 1151px) {
+    .text-mobil{
+      display: none;
+    }
     .me {
       position: relative;
       grid-column: 4/-1;
@@ -44,7 +130,7 @@ import "../css/reset.css";
       margin: 0;
 
       img {
-        max-width: 100%;
+        max-width: 80%;
       }
     }
 
@@ -66,21 +152,6 @@ import "../css/reset.css";
       padding-top: 7rem;
       display: grid;
       grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
-      /* grid-template-rows: repeat(4, 1fr); */
-      /* .text {
-        grid-column: 2/-1;
-        max-width: 500px;
-        justify-items: center;
-        align-items: center;
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        justify-self: start;
-
-        .squirrel {
-          grid-row: 2/3;
-          grid-column: 1/1;
-          rotate: 90deg;
-        } */
 
       & > div {
         display: grid;
@@ -105,119 +176,12 @@ import "../css/reset.css";
         line-height: 40px;
       }
     }
-
-    #message-container {
-      display: none;
-    }
   }
 
-  /* #arrow {
-      max-width: 5%;
-      padding-left: 30px;
-      padding-bottom: 0%;
-      animation: arrow 4s ease-in-out infinite;
-      cursor: pointer;
-    } */
 
-  /* @keyframes arrow {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-50px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    } */
 
-  @layer component {
-    @media (max-width: 950px) {
-      section {
-        background-color: var(--primary-color-01);
-        width: 100svw;
-        height: 100svh;
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-
-        section:first-child {
-          display: grid;
-          grid-template-columns: 0.5fr 1fr 0.5fr;
-        }
-        /* .grid1-1 {
-          display: grid;
-          justify-items: center;
-          align-items: stretch; */
-
-        /* img {
-            max-width: 480px;
-            z-index: 11;
-          } */
-
-        /* .text {
-            max-width: 500px;
-            justify-items: center;
-            align-items: center;
-            display: grid;
-            justify-self: start;
-  
-          } */
-      }
-      .header {
-        grid-row: 1/1;
-        grid-column: 2/3;
-
-        @layer component {
-          h1 {
-            font-size: var(--size-4);
-            /* padding: 82px 82px; */
-          }
-
-          h3 {
-            font-size: var(--size-2);
-            max-width: 65ch;
-          }
-        }
-      }
-      @layer component {
-        .me {
-          /* display: grid;
-            grid-template-columns: 20% auto;
-            grid-row: 1; */
-          display: none;
-
-          img {
-            display: none;
-          }
-        }
-      }
-
-      /* .visible {
-          opacity: 1;
-        } */
-      /* #message-container {
-          background-color: var(--primary-color-03);
-          color: #333;
-          padding: 4px;
-          border-radius: 5px;
-          margin: 10px 0;
-          width: fit-content;
-          height: fit-content;
-          font-family: Questrial;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          opacity: 1;
-          transition: opacity 0.5s ease;
-        } */
-
-      /* .grid1-1 .me > img:first-of-type {
-          max-width: 20%;
-          position: sticky;
-          top: 0px;
-          justify-self: start;
-          margin: 1rem;
-        } */
-    }
-  }
+ 
+ 
 </style>
 
 <script>
@@ -236,44 +200,4 @@ import "../css/reset.css";
     ease: "none",
     duration: 3,
   });
-
-  // import { array } from "astro:schema";
-
-  // Beskedindhold
-  // const messages = [
-  //   "Heej, fun facts om mig:)",
-  //   "Jeg elsker at lære nyt!",
-  //   "Jeg elsker al mad, men mest pizza",
-  //   "Jeg elsker farverne gul og blå:)",
-  // ];
-
-  // let messageIndex = 0;
-
-  // // Funktion til at vise en besked
-  // function showMessage() {
-  //   const container = document.getElementById("message-container");
-
-  //   // Opret et nyt beskedelement
-  //   const messageDiv = document.createElement("div");
-  //   messageDiv.classList.add("message");
-  //   messageDiv.textContent = messages[messageIndex];
-  //   container.appendChild(messageDiv);
-
-  //   // Gør beskeden synlig efter den er tilføjet
-  //   setTimeout(() => {
-  //     messageDiv.classList.add("visible");
-  //   }, 100); // Lille forsinkelse for at lade transition-effekten fungere
-
-  //   // Fjern beskeden efter 8 sekunder
-  //   setTimeout(() => {
-  //     messageDiv.classList.remove("visible");
-  //     setTimeout(() => container.removeChild(messageDiv), 500); // Giv tid til at forsvinde visuelt
-  //   }, 8000); // Beskeden forsvinder efter 8 sekunder
-
-  //   // Opdater beskedindekset for den næste besked
-  //   messageIndex = (messageIndex + 1) % messages.length;
-  // }
-
-  // // Start med at vise beskeder hver 10. sekund
-  // setInterval(showMessage, 10000);
 </script>
