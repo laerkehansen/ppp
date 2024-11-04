@@ -38,8 +38,9 @@ const { text, headertext } = Astro.props;
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const tools = document.querySelectorAll(".tool");
+  const tools = document.querySelectorAll(".tool");
 
+  if (tools.length > 0) {
     tools.forEach((tool) => {
       const paragraf = tool.querySelector(".fold");
 
@@ -47,5 +48,7 @@ const { text, headertext } = Astro.props;
         paragraf.classList.toggle("fold");
       });
     });
-  });
+  }
+});
+
 </script>
