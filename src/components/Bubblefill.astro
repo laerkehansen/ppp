@@ -37,7 +37,7 @@ const { text, headertext } = Astro.props;
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const tools = document.querySelectorAll(".tool");
 
   if (tools.length > 0) {
@@ -45,10 +45,13 @@ const { text, headertext } = Astro.props;
       const paragraf = tool.querySelector(".fold");
 
       tool.addEventListener("click", function () {
-        paragraf.classList.toggle("fold");
+        if (paragraf) {  // Tjek om paragraf findes
+          paragraf.classList.toggle("fold");
+        }
       });
     });
   }
 });
+
 
 </script>
